@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from clockings.views import landing_page
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', landing_page, name='index'),
 ]
