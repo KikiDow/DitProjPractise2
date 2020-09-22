@@ -30,7 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['ed8f13cbc4c24a30ad014cbf159c4437.vfs.cloud9.us-east-1.amazonaws.com']
 
-#UP NEXT: USER PASSWORD RESET
+#UP NEXT: CLOCKINGS MODEL AND CLOCK IN
 
 
 # Application definition
