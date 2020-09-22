@@ -30,7 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['ed8f13cbc4c24a30ad014cbf159c4437.vfs.cloud9.us-east-1.amazonaws.com']
 
-#UP NEXT: USER LOGIN AND AUTHENTICATION - JUST ADDed LOGIN LINK TO LANDING_PAGE.HTML - FORMS & LOGIN
+#UP NEXT: USER PASSWORD RESET
 
 
 # Application definition
@@ -104,6 +104,11 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'accounts.backends.CaseInsensitiveAuth'
 ]
 
 

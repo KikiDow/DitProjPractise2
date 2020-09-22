@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <p>Welcome {{ user.username }} to your profile page.</p>
+    <table>
+        <tr><td><strong>Username: </strong></td><td>{{ user.username }}</td></tr>
+        <tr><td><strong>Email: </strong></td><td>{{ user.email }}</td></tr>
+        <tr><td><strong>Validator: </strong></td><td>{{ user.is_staff }}</td></tr>
+        <tr><td><strong>Last Login: </strong></td><td>{{ user.last_login }}</td></tr>
+    </table>
+    <hr/>
+    {% if user.is_staff %}
+    <a href="{% url 'register' %}">Register New User</a>
+    {% endif %}
+    <a href="{% url 'logout' %}">Log Out</a>
+{% endblock %}

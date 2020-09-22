@@ -9,5 +9,8 @@
 </head>
 <body>
     <h1>DIT Proj Practise 2</h1>
+    {% if messages %}
+        {% for message in messages %} {{ message }} {% endfor %}
+    {% endif %}
     {% block content %} {% endblock %}
 </body>
