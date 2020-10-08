@@ -1,0 +1,10 @@
+{% extends 'base.html'%} {% block content %}
+<h2> Create Personal Details </h2>
+<p>Please fill in the following details to create your personal Details</p>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ create_personal_details_form }}
+    
+    <button type="submit">Create My Details</button>
+</form>
+{% endblock %}

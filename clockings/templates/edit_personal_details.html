@@ -1,0 +1,10 @@
+{% extends 'base.html'%} {% block content %}
+<h2> Edit Personal Details </h2>
+<p>Edit your personal details below</p>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ edit_personal_details_form }}
+    
+    <button type="submit" onclick="return confirm('Are you sure you want to make these changes?')">Update My Details</button>
+</form>
+{% endblock %}

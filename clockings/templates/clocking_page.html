@@ -1,0 +1,9 @@
+{% extends 'base.html'%} {% block content %}
+    <p>Welcome to the Clockings page.</p>
+    <hr/>
+    <form method='POST' action="{% url 'clock' %}">
+        {% csrf_token %}
+        <button type="submit">Clock Now</button>
+    </form>
+     <a href="{% url 'profile' %}"> Return to Profile Page </a>
+{% endblock %}

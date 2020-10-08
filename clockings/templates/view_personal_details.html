@@ -1,0 +1,39 @@
+{% extends 'base.html'%} {% block content %}
+    <p>Welcome to the Personal Details page.</p>
+    <hr/>
+    {% if personal_details_exist == False %}
+        <p>{{ info_message }}</p>
+        <a href="{% url 'create_personal_details' %}"> Create Personal Details </a>
+    {% else %}
+        <table>
+            <tr>
+                <td>Officer: </td>
+                <td>{{ personal_details.officer }}</td>
+            </tr>
+            <tr>
+                <td>Address Line 1: </td>
+                <td>{{ personal_details.address_1 }}</td>
+            </tr>
+            <tr>
+                <td>Address Line 2: </td>
+                <td>{{ personal_details.address_2 }}</td>
+            </tr>
+            <tr>
+                <td>County </td>
+                <td>{{ personal_details.county }}</td>
+            </tr>
+            <tr>
+                <td>Telephone No: </td>
+                <td>{{ personal_details.contact_number }}</td>
+            </tr>
+            <tr>
+                <td>Personal Email </td>
+                <td>{{ personal_details.personal_email }}</td>
+            </tr>
+        </table>
+        <hr/>
+        <a href="{% url 'edit_personal_details' personal_details.id %}"> Update Personal Details </a>
+    {% endif %}
+    <hr/>
+    <a href="{% url 'profile' %}"> Return to Profile Page </a>
+{% endblock %}
