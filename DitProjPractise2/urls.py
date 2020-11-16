@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.static import serve
 from clockings.views import landing_page
 from accounts import urls as accounts_urls
 from clockings import urls as clockings_urls
+from django.views import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

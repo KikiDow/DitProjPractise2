@@ -1,0 +1,25 @@
+{% extends 'base.html'%} {% block content %}
+    <p>Welcome to the Remote Clockings page.</p>
+    <hr/>
+    <h4> Your current position: </h4>
+    <button onclick="getLocation()">Try It</button>
+    <p id="coords_info"></p>
+    <button id="show_location" value="show_location" name="show_location" onclick="showLocationOnMap()">Show On Map</button>
+        <div>
+            <div id="map">
+                <iframe id="google_map" width="450" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk?output=embed"></iframe> 
+            </div>
+        </div>
+    <br/>
+    <div>
+        <form method='POST' action="{% url 'remote_clock' %}">
+            {% csrf_token %}
+            <button type="submit">Clock Remotely</button>
+        </form>
+    </div>
+
+    This product includes GeoLite2 data created by MaxMind, available from
+    <a href="https://www.maxmind.com">https://www.maxmind.com</a>.
+    <br>
+    <a href="{% url 'profile' %}"> Return to Profile Page </a>
+{% endblock %}

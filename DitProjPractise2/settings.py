@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import datetime
 
 if os.path.exists('env.py'):
 		import env
@@ -42,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_forms_bootstrap',
+    'django_filters',
     'clockings',
     'accounts',
 ]
@@ -117,7 +120,7 @@ AUTHENTICATION_BACKENDS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/London'
 
 USE_I18N = True
 
@@ -125,10 +128,22 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+#Global Start Date for generating rosters and quarters
+GLOBAL_START_DATE = datetime.datetime(2020, 9, 26)
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
+STATICFILES_LOCATION = 'static'
+#STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
+GEOIP_PATH = os.path.join(BASE_DIR, 'geoip')
+"""
+GEOIP_URL = '/geoip/'
+GEOIPFILES_DIRS = os.path.join(BASE_DIR, 'geoip')
+"""
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"

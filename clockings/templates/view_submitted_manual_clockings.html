@@ -1,0 +1,17 @@
+{% extends 'base.html'%} {% block content %}
+<p>View Submitted Manual Clockings</p>
+<table>
+    {% for manual_clocking_submitted in submitted_manual_clockings %}
+        {% if manual_clocking_submitted.checked_by_validator == False %}
+        <tr>
+            <td>Officer: </td>
+            <td>{{ manual_clocking_submitted.mc_officer_id }}</td>
+            <td>Date:</td>
+            <td>{{ manual_clocking_submitted.clocking_date }}</td>
+            <td><a class="btn btn-success" href="{% url 'view_manual_clock' manual_clocking_submitted.pk %}" role="button">View</a></td>
+        </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+<a href="{% url 'profile' %}"> Return to Profile Page </a>
+{% endblock %}

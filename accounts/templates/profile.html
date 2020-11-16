@@ -10,11 +10,17 @@
     <hr/>
     {% if user.is_staff %}
     <a href="{% url 'register' %}">Register New User</a>
+    <hr/>
+    <a href="{% url 'view_submitted_manual_clockings' %}">View Staff Manual Clockings</a>
     {% endif %}
     <hr/>
     <a href="{% url 'view_personal_details' %}"> Personal Details </a>
     <hr/>
     <a href="{% url 'clocking_page' %}"> Go to Clock </a>
+    <hr/>
+    <a href="{% url 'manual_clocking' %}"> Submit Manual Clock </a>
+    <hr/>
+    <a href="{% url 'remote_clocking_page' %}">Clock Remotely</a>
     <hr/>
     <a href="{% url 'logout' %}">Log Out</a>
 {% endblock %}

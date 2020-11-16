@@ -1,0 +1,12 @@
+{% extends 'base.html'%} {% block content %}
+    <p>Submit your Manual Clocking Form here.</p>
+    <form method="POST" enctype="multipart/form-data" class="active-margin">
+            {% csrf_token %}
+            {{ manual_clock_form.as_p }}
+            <span class="input-group-btn">
+                <button class="btn btn-success" type="submit">Submit Manual Clock</button>
+            </span>
+        </form>
+    <hr/>
+    <a href="{% url 'profile' %}"> Return to Profile Page </a>
+{% endblock %}
